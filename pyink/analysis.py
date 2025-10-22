@@ -113,7 +113,6 @@ def plot_image(
             constrained_layout=cl,
             subplot_kw=dict(projection=wcs),
         )
-        return fig
     else:
         axes = fig.axes
 
@@ -145,4 +144,4 @@ def plot_image(
     if df is not None:
         fig.suptitle(df.loc[idx]["Component_name"], fontsize=16)
     
-
+    return fig
