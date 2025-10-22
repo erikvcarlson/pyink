@@ -54,6 +54,7 @@ def plot_image(
     wcs: Union[None, WCS] = None,
     grid: bool = False,
     cmaps: Union[str, list] = ["viridis", "plasma", "inferno", "cividis"],
+    figName: str = 'Figure.pdf'
 ):
     """Plot an image from the image set.
 
@@ -124,7 +125,7 @@ def plot_image(
         ax.imshow(img[chan], cmap=next(cmaps_c))
         if grid:
             ax.grid()
-
+    ax.savefig(figName)
     if show_index:
         axes.flatten()[0].set_title(f"index = {idx}")
 
@@ -144,4 +145,4 @@ def plot_image(
     if df is not None:
         fig.suptitle(df.loc[idx]["Component_name"], fontsize=16)
     
-    return fig
+    return ax
