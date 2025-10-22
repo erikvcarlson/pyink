@@ -143,4 +143,5 @@ def plot_image(
 
     if df is not None:
         fig.suptitle(df.loc[idx]["Component_name"], fontsize=16)
+    return fig
 
